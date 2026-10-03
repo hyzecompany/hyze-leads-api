@@ -1,0 +1,8 @@
+# Valores para rodar a API localmente (copie para .dev.vars). Nunca commite o .dev.vars.
+# Chave secreta de TESTE do Turnstile (sempre aprova):
+TURNSTILE_SECRET_KEY=1x0000000000000000000000000000000AA
+# Libera os sites rodando em http://localhost:43xx
+ALLOW_LOCALHOST=true
+# Opcional: avisos de novo lead no Telegram
+# TELEGRAM_BOT_TOKEN=
+# TELEGRAM_CHAT_ID=

@@ -14,7 +14,8 @@
     "deploy": "wrangler deploy",
     "lint": "eslint .",
     "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "format:check": "prettier --check .",
+    "dev:local": "wrangler d1 migrations apply hyze-leads --local && wrangler dev"
   },
   "dependencies": {
     "@hono/zod-validator": "^0.9.1",
