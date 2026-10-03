@@ -1,0 +1,27 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hyze-leads-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-08-15",
+  "observability": { "enabled": true },
+  "routes": [{ "pattern": "api.hyzecompany.com.br", "custom_domain": true }],
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "hyze-leads",
+      // Preencha com o ID retornado por: pnpm wrangler d1 create hyze-leads
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations",
+    },
+  ],
+  "vars": {
+    // Domínio raiz aceito pelo CORS (o próprio domínio e qualquer subdomínio dele).
+    "ALLOWED_ROOT_DOMAIN": "hyzecompany.com.br",
+    // "true" libera http://localhost:* para testar os sites em dev.
+    "ALLOW_LOCALHOST": "false",
+  },
+  // Segredos (não ficam no repositório) — configure com `wrangler secret put <NOME>`:
+  //   TURNSTILE_SECRET_KEY  (obrigatório)
+  //   TELEGRAM_BOT_TOKEN    (opcional, para avisos de novo lead)
+  //   TELEGRAM_CHAT_ID      (opcional)
+}

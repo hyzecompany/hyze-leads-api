@@ -1,0 +1,17 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  api:
+    uses: hyzecompany/.github/.github/workflows/cloudflare-worker.yml@main
+    with:
+      d1-database: hyze-leads
+    secrets: inherit

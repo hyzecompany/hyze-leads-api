@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[astro]": { "editor.defaultFormatter": "astro-build.astro-vscode" },
+  "files.eol": "\n",
+  "eslint.validate": ["javascript", "typescript", "astro"],
+  "tailwindCSS.experimental.configFile": "packages/ui/src/styles/global.css",
+  "typescript.tsdk": "node_modules/typescript/lib"
+}
